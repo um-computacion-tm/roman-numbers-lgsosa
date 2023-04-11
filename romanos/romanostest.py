@@ -1,27 +1,5 @@
 import unittest
-
-def decimal_to_roman(decimal):
-    if decimal <= 3:
-        return 'I' * decimal
-    elif decimal == 4:
-        return 'IV'
-    elif decimal == 5:
-        return 'V'
-    elif decimal <5 or decimal <=8:
-        return 'V' + 'I' * (decimal-5)
-    
-    
-    elif decimal == 20 or decimal == 30 :
-        return 'X' * (decimal //10)
-    elif decimal ==40:
-        return 'XL'
-    elif decimal == 50:
-        return 'L'
-    
-    
-    else:
-        return "X"
-
+from romanos import decimal_to_roman
 
 class TestDecimalToRoman(unittest.TestCase):
     def test_uno(self):
@@ -73,7 +51,7 @@ class TestDecimalToRoman(unittest.TestCase):
     def test_cuarenta (self):
         resultado = decimal_to_roman (40)
         self.assertEqual (resultado,'XL')
-
+   
 
 
 if __name__ == '__main__':
